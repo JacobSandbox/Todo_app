@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Todo List</title>
+        <link rel="stylesheet" href="./styles/main.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1 id="title">Todo List:</h1>
+        <a href="/swap"><img class="swap-btn" src="/images/swap.png" alt="swap button"/></a>
+
+        <div id="list-box">
+            <h2><%= listTitle %></h2>
+            <form action="./submit" method="POST">
+                <input type="text" name="task" placeholder="Task to add" maxlength=30/>
+                <button class="btn" type="submit">Add Task</button>
+            </form>
+
+            <form action="./remove" method="post">
+            <% if ( taskList.length == 0 ) { %>
+            <h2>No tasks</h2>
+            <% } else { %>
+            <ul id="item-list">
+            <% for ( let i = 0; i < taskList.length; i++ ) { %>
+                <li class="list-item">
+                    <div><input type="checkbox" name="check.<%=i%>"><p> <%= taskList[i] %></p></div>
+                </li>
+            <% } } %>
+            </ul>
+
+            <button class="btn" type="submit">Complete checked tasks</button>
+            </form>
+        </div>
+        
+    </body>
+
+    <footer id="footer">(c) Jacob Salemi 2023</footer>
+</html>
