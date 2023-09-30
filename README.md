@@ -1,4 +1,4 @@
 # Todo_app
 Express-js based todo list web app
 
-created Aug 30 2023
+created by Jacob Salemi Aug 30 2023
